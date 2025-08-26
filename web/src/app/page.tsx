@@ -2,6 +2,12 @@ import TaskSelectionList from "@/components/views/TaskSelectionList";
 import FocusView from "@/components/views/FocusView";
 import { mockTasks } from "@/data/mockTasks"
 
+// export const SimpleComponent = ({ id }: { id: number }) => {
+//   return <div>Task {id}</div>;
+// };
+
+
+
 export default function Home() {
   const mainTask = mockTasks[0];
   const lastTask = mainTask.subtasks?.find(subtask => subtask.completed);
@@ -21,6 +27,11 @@ export default function Home() {
             lastTask={lastTask || fallbackTask}
             currentTask={currentTask || fallbackTask}>
         </FocusView> */}
+
+        {/* <SimpleComponent key="1" id={1} />
+        <SimpleComponent key="2" id={2} />
+        <SimpleComponent key="3" id={3} /> */}
+
         <TaskSelectionList tasks={mockTasks}/>
       </div>
     </div>

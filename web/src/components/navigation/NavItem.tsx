@@ -6,7 +6,13 @@ interface NavItemProps {
     className?: string;
 }
 
-export default function NavItem({ href, label, icon, isActive = false, className = '' }: NavItemProps) {
+export default function NavItem({ 
+  href, 
+  label, 
+  icon, 
+  isActive = false, 
+  className = '' 
+}: NavItemProps) {
   return (
     <a
       href={href}

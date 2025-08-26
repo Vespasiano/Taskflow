@@ -1,27 +1,26 @@
 import NavItem from "./NavItem";
+import { NavItemData } from "@/types/core/navItem";
 
 interface NavBarProps {
-    activePage?: 'tasks' | 'focus' | 'settings';
+  items: NavItemData[];
+  activePage?: string;
 }
 
-export default function NavBar({ activePage = 'tasks' }: NavBarProps) {
+export default function NavBar({ 
+  items,
+  activePage
+}: NavBarProps) {
     return (
     <nav className="flex items-center space-x-4">
-      <NavItem
-        href="#"
-        label="All Tasks"
-        isActive={activePage === 'tasks'}
-      />
-      <NavItem
-        href="#"
-        label="Focus"
-        isActive={activePage === 'focus'}
-      />
-      <NavItem
-        href="#"
-        label="Settings"
-        isActive={activePage === 'settings'}
-      />
+      {items.map((item) => (
+        <NavItem
+          key={item.label}
+          href={item.href}
+          label={item.label}
+          icon={item.icon}
+          isActive={item.label.toLowerCase() === activePage?.toLowerCase()}
+        />
+      ))}
     </nav>
     );
 }

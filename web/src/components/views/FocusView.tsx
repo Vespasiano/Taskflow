@@ -1,6 +1,6 @@
-import { Task } from "@/types/task";
-import CompletedTaskCard from "../tasks/CompletedTaskCard";
-import CurrentTaskCard from "../tasks/CurrentTaskCard";
+import { Task } from "@/types/core/task";
+import CompletedTaskCard from "../tasks/core/CompletedTaskCard";
+import CurrentTaskCard from "../tasks/core/CurrentTaskCard";
 import HeaderView from "./HeaderView";
 
 interface FocusViewProps {

@@ -1,4 +1,4 @@
-import { Task } from "@/types/task";
+import { Task } from "@/types/core/task";
 
 export const mockTasks: Task[] = [
   {
@@ -11,7 +11,19 @@ export const mockTasks: Task[] = [
         id: 101,
         title: 'Set up development environment',
         description: 'Can you run tests locally?',
-        completed: true
+        completed: true,
+        subtasks: [
+          {
+            id: 1011,
+            title: 'Install Node.js and npm',
+            completed: true
+          },
+          {
+            id: 1012,
+            title: 'Create a new Next.js project',
+            completed: true
+          }
+        ]
       },
       {
         id: 102,
